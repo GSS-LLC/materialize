@@ -75,7 +75,7 @@
           var $chips = $chip.closest(SELS.CHIPS);
           $(SELS.CHIP).removeClass('selected');
 
-          if (!wasSelected) {
+          if ($chips.length > 0 && !wasSelected) {
             self.selectChip($chip.index(), $chips);
           }
         }

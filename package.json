@@ -1,19 +1,19 @@
 {
-  "name": "materialize-css",
+  "name": "@gss-llc/materialize-css",
   "description": "Builds Materialize distribution packages",
   "author": "Alvin Wang, Alan Chang",
   "homepage": "http://materializecss.com/",
-  "version": "0.100.2",
+  "version": "0.100.3",
   "main": "dist/js/materialize.js",
   "style": "dist/css/materialize.css",
   "sass": "sass/materialize.scss",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Dogfalo/materialize.git"
+    "url": "git://github.com/GSS-LLC/materialize.git"
   },
   "bugs": {
-    "url": "https://github.com/Dogfalo/materialize/issues"
+    "url": "https://github.com/GSS-LLC/materialize/issues"
   },
   "scripts": {
     "test": "grunt travis --verbose"

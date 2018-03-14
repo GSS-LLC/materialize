@@ -1,5 +1,5 @@
 /*!
- * Materialize v0.100.2 (http://materializecss.com)
+ * Materialize vundefined (http://materializecss.com)
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
@@ -5547,7 +5547,7 @@ if (Vel) {
           var $chips = $chip.closest(SELS.CHIPS);
           $(SELS.CHIP).removeClass('selected');
 
-          if (!wasSelected) {
+          if ($chips.length > 0 && !wasSelected) {
             self.selectChip($chip.index(), $chips);
           }
         }
