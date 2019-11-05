@@ -607,8 +607,13 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
                 // On focus/click, focus onto the root to open it up.
                 on( 'focus.' + STATE.id + ' click.' + STATE.id, function( event ) {
-                    event.preventDefault()
-                    P.$root.eq(0).focus()
+                  // აქ შეცდომა აქვს ქრომის 73-ვრსიისდნ და ეს setTimeout - მაგიტომაა დაწერილი
+                  // იხ: https://github.com/Dogfalo/materialize/issues/6312
+                  // იხ: https://bugs.chromium.org/p/chromium/issues/detail?id=941910
+                  setTimeout(function () {
+                    event.preventDefault();
+                    P.$root.eq(0).focus();
+                  }, 100);
                 }).
 
                 // Handle keyboard event based on the picker being opened or not.

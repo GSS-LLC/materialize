@@ -5,7 +5,7 @@
 
       // Defaults
       var defaults = {
-        delay: 350,
+        delay: 2000,
         tooltip: '',
         position: 'bottom',
         html: false

@@ -2,7 +2,7 @@ Changelog
 =======
 Bolded styling surrounded by emojis indicates a breaking change.
 
-## v0.100.2 (August 26, 2017)
+## v0.100.4 (August 26, 2017)
 - Modal no longer errors on IE 11
 - Fixes for Webpack and CommonJS loading of Materialize
 - Select displays properly inside Datepicker

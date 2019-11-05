@@ -2813,7 +2813,7 @@ if (Vel) {
 
     // Defaults
     var defaults = {
-      delay: 350,
+      delay: 2000,
       tooltip: '',
       position: 'bottom',
       html: false
@@ -4346,7 +4346,7 @@ if (Vel) {
 
     // Function to update labels of text fields
     Materialize.updateTextFields = function () {
-      var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], textarea';
+      var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=time], input[type=search], textarea';
       $(input_selector).each(function (index, element) {
         var $this = $(this);
         if ($(element).val().length > 0 || $(element).is(':focus') || element.autofocus || $this.attr('placeholder') !== undefined) {
@@ -4360,7 +4360,7 @@ if (Vel) {
     };
 
     // Text based inputs
-    var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], textarea';
+    var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=time], input[type=search], textarea';
 
     // Add active if form auto complete
     $(document).on('change', input_selector, function () {
@@ -6884,8 +6884,13 @@ if (Vel) {
 
         // On focus/click, focus onto the root to open it up.
         on('focus.' + STATE.id + ' click.' + STATE.id, function (event) {
-          event.preventDefault();
-          P.$root.eq(0).focus();
+          // აქ შეცდომა აქვს ქრომის 73-ვრსიისდნ და ეს setTimeout - მაგიტომაა დაწერილი
+          // იხ: https://github.com/Dogfalo/materialize/issues/6312
+          // იხ: https://bugs.chromium.org/p/chromium/issues/detail?id=941910
+          setTimeout(function () {
+            event.preventDefault();
+            P.$root.eq(0).focus();
+          }, 100);
         }).
 
         // Handle keyboard event based on the picker being opened or not.
